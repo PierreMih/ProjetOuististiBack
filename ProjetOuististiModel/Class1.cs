@@ -1,4 +1,4 @@
-﻿namespace ProjetOuististiModel
+﻿namespace ProjetOuististiDomain
 {
     public class Class1
     {
