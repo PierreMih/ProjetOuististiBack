@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetOuististiBack", "ProjetOuististiBack\ProjetOuististiBack.csproj", "{42D7CBC6-7E8A-4337-964F-1D601743BCD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetOuististiControllers", "ProjetOuististiBack\ProjetOuististiControllers.csproj", "{42D7CBC6-7E8A-4337-964F-1D601743BCD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

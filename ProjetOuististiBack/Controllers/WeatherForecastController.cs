@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace ProjetOuististiBack.Controllers
+namespace ProjetOuististiControllers.Controllers
 {
     [ApiController]
     [Route("[controller]")]

@@ -1,4 +1,4 @@
-namespace ProjetOuististiBack
+namespace ProjetOuististiControllers
 {
     public class WeatherForecast
     {
