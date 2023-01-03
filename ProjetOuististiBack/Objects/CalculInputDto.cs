@@ -14,7 +14,7 @@ namespace ProjetOuististiApplication.Objects
         { 
             input1 = n1;
             input2 = n2;
-            if(Enum.TryParse<OperationTypes>(opType, true, out OperationTypes opTypeAsEnum)) {
+            if(Enum.TryParse(opType, true, out OperationTypes opTypeAsEnum)) {
                 OperationType = opTypeAsEnum;
             }
             else
