@@ -13,10 +13,10 @@ namespace ProjetOuististiApplication.Controllers
             _logger = logger;
         }
 
-        //[HttpPost(Name = "Calculate")]
-        //public float ReceiveCalculAndReturnResult(CalculDto calcul)
-        //{
-        //    return 10;
-        //}
+        [HttpPost(Name = "Calculate")]
+        public float ReceiveCalculAndReturnResult(CalculDto calcul)
+        {
+            return 10;
+        }
     }
 }
