@@ -1,11 +1,6 @@
-﻿using ProjetOuististiDomain.Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ProjetOuististiDomain.Enums;
 
-namespace ProjetOuististiDomain.Calcul
+namespace ProjetOuististiDomain.Calculs
 {
     public static class CalculFactory
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetOuististiApplication.Objects;
-using ProjetOuististiDomain.Calcul;
+using ProjetOuististiDomain.Calculs;
 
 namespace ProjetOuististiApplication.Controllers
 {

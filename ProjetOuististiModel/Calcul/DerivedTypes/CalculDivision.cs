@@ -1,11 +1,11 @@
-﻿using ProjetOuististiDomain.Shared;
+﻿using ProjetOuististiDomain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetOuististiDomain.Calcul
+namespace ProjetOuististiDomain.Calculs
 {
     public class CalculDivision : CalculAbstract
     {

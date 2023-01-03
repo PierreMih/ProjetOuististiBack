@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ProjetOuististiDomain.Calcul;
-using ProjetOuististiDomain.Shared;
+using ProjetOuististiDomain.Calculs;
+
 
 namespace ProjetOuististiEntityFramework
 {

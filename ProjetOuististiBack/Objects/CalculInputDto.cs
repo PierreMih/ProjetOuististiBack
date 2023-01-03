@@ -1,6 +1,6 @@
 ﻿using ProjetOuististiDomain;
-using ProjetOuististiDomain.Shared;
-using ProjetOuististiDomain.Calcul;
+using ProjetOuististiDomain.Enums;
+using ProjetOuististiDomain.Calculs;
 
 namespace ProjetOuististiApplication.Objects
 {
