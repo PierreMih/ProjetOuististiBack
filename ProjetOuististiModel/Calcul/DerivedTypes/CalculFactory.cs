@@ -9,9 +9,10 @@ namespace ProjetOuististiDomain.Calcul
 {
     public static class CalculFactory
     {
-        public static CalculAbstract BuildFromValuesAndOpType(float input1, float input2, OperationTypes opType)
+        public static CalculAbstract BuildFromValuesAndOpType(float input1, float input2, string opType)
         {
-            switch(opType)
+            Enum.TryParse(opType, true, out OperationTypes opTypeAsEnum);
+            switch (opTypeAsEnum)
             {
                 case OperationTypes.Addition : return new CalculAddition(input1, input2);
                 case OperationTypes.Soustraction: return new CalculSoustraction(input1, input2);

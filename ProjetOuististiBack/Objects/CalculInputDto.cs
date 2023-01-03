@@ -6,22 +6,10 @@ namespace ProjetOuististiApplication.Objects
 {
     public class CalculInputDto
     {
-        public float input1;
-        public float input2;
-        public OperationTypes OperationType;
+        public float input1 { get; set; }
+        public float input2 { get; set; }
 
-        public CalculInputDto(float n1, float n2, string opType) 
-        { 
-            input1 = n1;
-            input2 = n2;
-            if(Enum.TryParse(opType, true, out OperationTypes opTypeAsEnum)) {
-                OperationType = opTypeAsEnum;
-            }
-            else
-            {
-                throw new Exception($"Type d'opération non reconnu : {opType}");
-            }
-        }
+        public string OperationType { get; set; }
 
         public static implicit operator CalculAbstract(CalculInputDto calculDto)
         {
