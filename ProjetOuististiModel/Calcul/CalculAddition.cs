@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetOuististiDomain.Calcul
 {
-    internal class CalculAddition : CalculAbstract
+    public class CalculAddition : CalculAbstract
     {
         public CalculAddition(float input1, float input2) : base(input1, input2)
         {

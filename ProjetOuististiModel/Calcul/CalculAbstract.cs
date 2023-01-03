@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetOuististiDomain.Calcul
 {
-    internal abstract class CalculAbstract
+    public abstract class CalculAbstract
     {
         public Guid Id { get; private set; }
         public float Input1 { get; private set; }
@@ -18,21 +18,14 @@ namespace ProjetOuististiDomain.Calcul
             Input2 = input2;
         }
 
-        public Result? Result { 
-            get{
-                if(Result == null)
-                {
-                    CalculateAndReturnResult();
-                }
-                return Result;
-            }
-            set { Result = value; }
-        }
-        private float CalculateAndReturnResult()
+        private Result? Result;
+        public Result GetResult()
         {
-            Result = new Result(Calculate(), Id);
-            if (Result == null) { throw new Exception("Résultat non généré?! Erreur!"); }
-            return Result.Value;
+            if (Result == null)
+            {
+                Result = new Result(Calculate(), Id);
+            }
+                return Result;
         }
 
         protected abstract float Calculate();

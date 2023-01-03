@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetOuististiApplication", "ProjetOuististiBack\ProjetOuististiApplication.csproj", "{42D7CBC6-7E8A-4337-964F-1D601743BCD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetOuististiDomain", "ProjetOuististiModel\ProjetOuististiDomain.csproj", "{87B57AE1-2060-4F34-9564-A3B70E776DA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetOuististiDomain", "ProjetOuististiModel\ProjetOuististiDomain.csproj", "{87B57AE1-2060-4F34-9564-A3B70E776DA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetOuististiBackTests", "ProjetOuististiBackTests\ProjetOuististiBackTests.csproj", "{26631602-DBD9-468E-BE9E-A754AB1E4290}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{87B57AE1-2060-4F34-9564-A3B70E776DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87B57AE1-2060-4F34-9564-A3B70E776DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87B57AE1-2060-4F34-9564-A3B70E776DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26631602-DBD9-468E-BE9E-A754AB1E4290}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26631602-DBD9-468E-BE9E-A754AB1E4290}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26631602-DBD9-468E-BE9E-A754AB1E4290}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26631602-DBD9-468E-BE9E-A754AB1E4290}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

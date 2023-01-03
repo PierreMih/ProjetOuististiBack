@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetOuististiDomain
 {
-    internal class Result
+    public class Result
     {
         private Guid _idCalcul;
         public float Value { get; private set; }
@@ -15,6 +15,11 @@ namespace ProjetOuististiDomain
         {
             Value = resultValue;
             _idCalcul = id;
+        }
+
+        public static implicit operator float(Result result) 
+        { 
+            return result.Value;
         }
     }
 }
