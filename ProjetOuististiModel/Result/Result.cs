@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetOuististiDomain
+namespace ProjetOuististiDomain.Result
 {
     public class Result
     {
@@ -17,8 +17,8 @@ namespace ProjetOuististiDomain
             _idCalcul = id;
         }
 
-        public static implicit operator float(Result result) 
-        { 
+        public static implicit operator float(Result result)
+        {
             return result.Value;
         }
     }
