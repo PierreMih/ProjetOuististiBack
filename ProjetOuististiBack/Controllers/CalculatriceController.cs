@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProjetOuististiApplication.Objects;
+using ProjetOuististiDomain.Calcul;
 
 namespace ProjetOuististiApplication.Controllers
 {
@@ -14,9 +16,9 @@ namespace ProjetOuististiApplication.Controllers
         }
 
         [HttpPost(Name = "Calculate")]
-        public float ReceiveCalculAndReturnResult(CalculDto calcul)
+        public CalculOutputDto ReceiveCalculAndReturnResult(CalculInputDto calcul)
         {
-            return 10;
+            return new CalculOutputDto(calcul);  
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetOuististiDomain.Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,11 @@ namespace ProjetOuististiDomain.Calcul
         {
             if (Input2 == 0) throw new DivideByZeroException("La division par 0 est interdite");
             return Input1 / Input2;
+        }
+
+        public override OperationTypes getOperationType()
+        {
+            return OperationTypes.Division;
         }
     }
 }
