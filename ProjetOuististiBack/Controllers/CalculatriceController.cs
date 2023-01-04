@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using ProjetOuististiApplication.Objects;
 using ProjetOuististiDomain.Calculs;
 
@@ -15,6 +16,7 @@ namespace ProjetOuististiApplication.Controllers
             _logger = logger;
         }
 
+        [EnableCors]
         [HttpPost(Name = "Calculate")]
         public string ReceiveCalculAndReturnResult(CalculInputDto calcul)
         {
