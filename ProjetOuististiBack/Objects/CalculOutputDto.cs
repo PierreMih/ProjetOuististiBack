@@ -4,10 +4,10 @@ namespace ProjetOuististiApplication.Objects
 {
     public class CalculOutputDto
     {
-        public float input1;
-        public float input2;
-        public string OperationType;
-        public float output;
+        public float input1 { get; set; }
+        public float input2 { get; set; }
+        public string OperationType { get; set; }
+        public float output { get; set; }
 
         public CalculOutputDto(CalculAbstract ca) 
         { 

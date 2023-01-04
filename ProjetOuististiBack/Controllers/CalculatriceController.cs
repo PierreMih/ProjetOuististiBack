@@ -19,10 +19,16 @@ namespace ProjetOuististiApplication.Controllers
         }
 
         [HttpPost(Name = "Calculate")]
-        public string ReceiveCalculAndReturnResult(CalculInputDto calcul)
+        public CalculOutputDto ReceiveCalculAndReturnResult(CalculInputDto calcul)
         {
-            return "hello";
-            //return new CalculOutputDto(calcul);
+            try
+            {
+                return new CalculOutputDto(calcul);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
