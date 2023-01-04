@@ -1,5 +1,15 @@
 var builder = WebApplication.CreateBuilder(args);
 
+string corsName = "OuististiCors";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: corsName,
+                        policy =>
+                        {
+                            policy.AllowAnyOrigin();
+                        });
+});
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -17,6 +27,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(corsName);
 
 app.UseAuthorization();
 
