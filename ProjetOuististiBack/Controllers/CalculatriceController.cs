@@ -18,7 +18,7 @@ namespace ProjetOuististiApplication.Controllers
             _logger = logger;
         }
 
-        [HttpPost(Name = "Calculate")]
+        [HttpPost(Name = "/Calculate")]
         public CalculOutputDto ReceiveCalculAndReturnResult(CalculInputDto calcul)
         {
             try
@@ -29,6 +29,18 @@ namespace ProjetOuististiApplication.Controllers
             {
                 throw;
             }
+        }
+
+        [HttpGet(Name = "/Statistics")]
+        public StatisticsOutputDto GetStatistics()
+        {
+            return new StatisticsOutputDto
+            {
+                Additions = 167,
+                Soustractions = 888,
+                Multiplications = 10,
+                Divisions = 300
+            };
         }
     }
 }
