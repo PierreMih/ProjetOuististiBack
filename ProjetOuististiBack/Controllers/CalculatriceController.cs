@@ -25,9 +25,9 @@ namespace ProjetOuististiApplication.Controllers
             {
                 return new CalculOutputDto(calcul);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                throw ex;
+                throw ;
             }
         }
     }
