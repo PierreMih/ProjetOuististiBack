@@ -1,4 +1,5 @@
-﻿using ProjetOuististiDomain.Calcul;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetOuististiDomain.Calcul;
 using ProjetOuististiDomain.Calculs;
 using ProjetOuististiDomain.Results;
 using System;
@@ -30,7 +31,10 @@ namespace ProjetOuististiEntityFramework.Repositories
 
         public Result GetResultFromCalcul(Guid calcul)
         {
-            throw new NotImplementedException();
+            using (var db = new ProjetOuististiDbContext())
+            {
+                return db.Calculs.Where(c => c.Id == calcul).FirstOrDefault().GetResult();
+            }
         }
 
         public Result Update(CalculAbstract calcul)
