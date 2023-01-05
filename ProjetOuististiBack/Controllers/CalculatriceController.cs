@@ -18,7 +18,7 @@ namespace ProjetOuististiApplication.Controllers
             _logger = logger;
         }
 
-        [HttpPost(Name = "/Calculate")]
+        [HttpPost("/Calculate")]
         public CalculOutputDto ReceiveCalculAndReturnResult(CalculInputDto calcul)
         {
             try
@@ -31,7 +31,7 @@ namespace ProjetOuististiApplication.Controllers
             }
         }
 
-        [HttpGet(Name = "/Statistics")]
+        [HttpGet("/Statistics")]
         public StatisticsOutputDto GetStatistics()
         {
             return new StatisticsOutputDto
