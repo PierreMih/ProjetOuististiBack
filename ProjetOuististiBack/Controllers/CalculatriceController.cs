@@ -36,9 +36,9 @@ namespace ProjetOuististiApplication.Controllers
         {
             return new StatisticsOutputDto
             {
-                Additions = 167,
-                Soustractions = 888,
-                Multiplications = 10,
+                Additions = 200,
+                Soustractions = 350,
+                Multiplications = 250,
                 Divisions = 300
             };
         }
