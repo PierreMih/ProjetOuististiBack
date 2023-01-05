@@ -27,7 +27,7 @@ namespace ProjetOuististiApplication.Controllers
             }
             catch (Exception )
             {
-                throw ;
+                throw;
             }
         }
     }

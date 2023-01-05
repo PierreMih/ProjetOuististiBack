@@ -14,7 +14,7 @@ namespace ProjetOuististiDomain.Calculs
         public float Input1 { get; private set; }
         public float Input2 { get; private set; }
 
-        public CalculAbstract(float input1, float input2)
+        protected CalculAbstract(float input1, float input2)
         {
             Input1 = input1;
             Input2 = input2;
