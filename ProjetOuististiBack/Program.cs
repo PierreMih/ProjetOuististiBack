@@ -1,3 +1,6 @@
+using ProjetOuististiDomain.Calcul;
+using ProjetOuististiEntityFramework.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 string corsName = "OuististiCors";
@@ -17,6 +20,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddTransient<ICalculRepository,CalculRepository>();
+builder.Services.AddTransient<CalculManager>();
 
 var app = builder.Build();
 

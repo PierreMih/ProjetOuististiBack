@@ -11,9 +11,9 @@ namespace ProjetOuististiApplication.Objects
 
         public string OperationType { get; set; }
 
-        public static implicit operator CalculAbstract(CalculInputDto calculDto)
-        {
-            return CalculFactory.BuildFromValuesAndOpType(calculDto.input1, calculDto.input2, calculDto.OperationType);
-        }
+        //public static implicit operator CalculAbstract(CalculInputDto calculDto)
+        //{
+        //    return CalculFactory.BuildFromValuesAndOpType(calculDto.input1, calculDto.input2, calculDto.OperationType);
+        //}
     }
 }
