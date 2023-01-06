@@ -13,8 +13,8 @@ namespace ProjetOuististiApplication.Objects
 
         public CalculOutputDto(CalculAbstract ca) 
         { 
-            input2 = ca.Input1; 
-            input1 = ca.Input2;
+            input1 = ca.Input1; 
+            input2 = ca.Input2;
             OperationType = ca.getOperationType().ToString();
             guid = ca.Id.ToString();
         }
