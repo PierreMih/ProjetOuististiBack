@@ -1,0 +1,55 @@
+# Documentation Fonctionnelle
+	
+	Lancer le projet avec un dotnet run
+	Un swagger s'ouvre sur https://localhost:7140/swagger/index.html
+	
+	## La liste des APIs est la suivante :
+
+		### Route Historique
+		GET /History
+			Pour avoir l'historique des calculs effectués
+			retourne :
+			[
+			  {
+				"input1": 0,
+				"input2": 0,
+				"operationType": "string",
+				"output": 0,
+				"guid": "string"
+			  }
+			]
+			
+		### Route Calcul
+		POST /Calcul
+			Pour envoyer un calcul et récupérer son résultat
+			{
+			  "input1": 0,
+			  "input2": 0,
+			  "operationType": "addition" OU "soustraction" OU "multiplication" OU "division"
+			}
+			retourne :
+			{
+			  "input1": 0,
+			  "input2": 0,
+			  "operationType": "string",
+			  "output": 0,
+			  "guid": "string"
+			}
+			
+		### Route Suppression d'un calcul
+		DELETE /Calcul
+			Pour supprimer un calcul effectué par le passé (obtenu en consultant l'historique par exemple)
+			{
+				"guid": "string"
+			}
+			
+		### Route Statistiques
+		GET /Statistics
+			Pour obtenir les statistiques des types de calculs effectués
+			retourne :
+			{
+			  "additions": 0,
+			  "soustractions": 0,
+			  "multiplications": 0,
+			  "divisions": 0
+			}
