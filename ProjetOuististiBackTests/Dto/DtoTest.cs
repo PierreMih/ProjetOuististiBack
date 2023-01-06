@@ -15,7 +15,7 @@ namespace ProjetOuististiBackTests.Dto
         private readonly float _2 = 9;
 
         [TestMethod]
-        public void IsCalculInputDtoImplicitConversionToCalculAbstractCorrect()
+        public void IsCalculInputDtoExplicitConversionThroughFactoryToCalculAbstractCorrect()
         {
             CalculInputDto cid = new CalculInputDto
             {
@@ -23,7 +23,7 @@ namespace ProjetOuististiBackTests.Dto
                 input2 = _2,
                 OperationType = "Addition",
             };
-            CalculAbstract ca = cid;
+            CalculAbstract ca = CalculFactory.BuildFromValuesAndOpType(cid.input1, cid.input2, cid.OperationType);
             Assert.IsTrue((ca.Input1 == _1) && (ca.Input2 == _2));
         }
 
@@ -32,7 +32,11 @@ namespace ProjetOuististiBackTests.Dto
         {
             CalculDivision cd = new(_1,_2);
             CalculOutputDto cod = new(cd);
-            Assert.IsTrue((cod.input1 == _1) && (cod.input2 == _2) && (cod.OperationType == "Division") && (cod.output == cd.GetResult()));
+            /*Assert.IsTrue((cod.input1 == _1) && (cod.input2 == _2) && (cod.OperationType == "Division") && (cod.output == cd.GetResult()));*/
+            Assert.IsTrue(cod.input1 == _1);
+            Assert.IsTrue(cod.input2 == _2);
+            Assert.IsTrue(cod.OperationType == "Division");
+            Assert.AreEqual(cod.output,cd.GetResult());
         }
     }
 }
