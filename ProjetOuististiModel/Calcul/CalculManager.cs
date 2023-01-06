@@ -1,5 +1,6 @@
 ﻿using ProjetOuististiDomain.Calculs;
 using ProjetOuististiDomain.Results;
+using ProjetOuististiDomain.Stats;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,19 @@ namespace ProjetOuististiDomain.Calcul
             {
                 return false;
             }
+        }
+
+        public Statistics GetStatistics()
+        {
+            var calcs = _calculRepository.GetAll();
+            var stats = new Statistics
+            {
+                Additions = calcs.Where(c => c.getOperationType() == Enums.OperationTypes.Addition).Count(),
+                Soustractions = calcs.Where(c => c.getOperationType() == Enums.OperationTypes.Soustraction).Count(),
+                Multiplications = calcs.Where(c => c.getOperationType() == Enums.OperationTypes.Multiplication).Count(),
+                Divisions = calcs.Where(c => c.getOperationType() == Enums.OperationTypes.Division).Count()
+            };
+            return stats;
         }
     }
 }

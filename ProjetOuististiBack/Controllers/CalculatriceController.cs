@@ -61,13 +61,7 @@ namespace ProjetOuististiApplication.Controllers
         [HttpGet("/Statistics")]
         public StatisticsOutputDto GetStatistics()
         {
-            return new StatisticsOutputDto
-            {
-                Additions = 200,
-                Soustractions = 350,
-                Multiplications = 250,
-                Divisions = 300
-            };
+            return new(_calculManager.GetStatistics());
         }
     }
 }
