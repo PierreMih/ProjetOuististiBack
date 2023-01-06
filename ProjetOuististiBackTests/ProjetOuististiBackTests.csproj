@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ProjetOuististiBack\ProjetOuististiApplication.csproj" />
     <ProjectReference Include="..\ProjetOuististiModel\ProjetOuististiDomain.csproj" />
   </ItemGroup>
 
