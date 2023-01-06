@@ -14,7 +14,7 @@ namespace ProjetOuististiApplication.Objects
             input1 = ca.Input1; 
             input2 = ca.Input2;
             OperationType = ca.getOperationType().ToString();
-            output = ca.GetResult();
+            //output = ca.GetResult();
         }
     }
 }

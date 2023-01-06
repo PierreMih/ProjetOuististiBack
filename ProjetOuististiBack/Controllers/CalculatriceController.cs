@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using ProjetOuististiApplication.Objects;
+using ProjetOuististiDomain.Calcul;
 using ProjetOuististiDomain.Calculs;
+using ProjetOuististiEntityFramework.Repositories;
 
 namespace ProjetOuististiApplication.Controllers
 {
@@ -12,23 +14,26 @@ namespace ProjetOuististiApplication.Controllers
     public class CalculatriceController : ControllerBase
     {
         private readonly ILogger<CalculatriceController> _logger;
+        private readonly CalculManager _calculManager;
+        private readonly ICalculRepository _calculRepository;
 
-        public CalculatriceController(ILogger<CalculatriceController> logger)
+        public CalculatriceController(ILogger<CalculatriceController> logger, CalculManager calculManager, ICalculRepository calculRepository)
         {
             _logger = logger;
+            _calculManager = calculManager;
+            _calculRepository = calculRepository;
         }
 
         [HttpPost("/Calculate")]
         public CalculOutputDto ReceiveCalculAndReturnResult(CalculInputDto calcul)
         {
-            try
-            {
-                return new CalculOutputDto(calcul);
-            }
-            catch (Exception )
-            {
-                throw;
-            }
+            CalculAbstract calc = _calculManager.ReceiveCalcul(calcul.input1, calcul.input2, calcul.OperationType);
+            _calculRepository.Add(calc);
+
+            var output = new CalculOutputDto(calc);
+            output.output = _calculManager.GetResultFromCalcul(calc);
+
+            return output;
         }
 
         [HttpGet("/Statistics")]
@@ -41,6 +46,24 @@ namespace ProjetOuististiApplication.Controllers
                 Multiplications = 250,
                 Divisions = 300
             };
+        }
+
+        [HttpGet("/AllCalculsWithResults")]
+        public IEnumerable<CalculOutputDto> GetAllCalculsWithResults()
+        {
+            //List <CalculOutputDto> list = new();
+            //foreach (CalculAbstract calc in _calculRepository.GetAll())
+            //{
+            //    list.Add(new(calc));
+            //}
+            //return list;
+            foreach (CalculAbstract calc in _calculRepository.GetAll())
+            {
+                var output = new CalculOutputDto(calc);
+                output.output = _calculManager.GetResultFromCalcul(calc);
+                yield return output;
+            }
+            
         }
     }
 }
