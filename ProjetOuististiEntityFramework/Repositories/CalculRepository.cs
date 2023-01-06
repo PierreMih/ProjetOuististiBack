@@ -42,7 +42,7 @@ namespace ProjetOuististiEntityFramework.Repositories
             throw new NotImplementedException();
         }
 
-        void ICalculRepository.Delete(Guid calcul)
+        void Delete(Guid calcul)
         {
             using (var db = new ProjetOuististiDbContext())
             {
