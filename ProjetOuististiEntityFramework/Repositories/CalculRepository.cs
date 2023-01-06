@@ -41,5 +41,18 @@ namespace ProjetOuististiEntityFramework.Repositories
         {
             throw new NotImplementedException();
         }
+
+        void ICalculRepository.Delete(Guid calcul)
+        {
+            using (var db = new ProjetOuististiDbContext())
+            {
+                var calc = db.Calculs.Where(c => c.Id.Equals(calcul));
+                foreach(CalculAbstract c in calc)
+                {
+                    db.Calculs.Remove(c);
+                }
+                db.SaveChanges();
+            }
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ProjetOuististiDomain;
 using ProjetOuististiDomain.Enums;
 using ProjetOuististiDomain.Calculs;
+using System.Runtime.Serialization;
 
 namespace ProjetOuististiApplication.Objects
 {
@@ -10,10 +11,5 @@ namespace ProjetOuististiApplication.Objects
         public float input2 { get; set; }
 
         public string OperationType { get; set; }
-
-        //public static implicit operator CalculAbstract(CalculInputDto calculDto)
-        //{
-        //    return CalculFactory.BuildFromValuesAndOpType(calculDto.input1, calculDto.input2, calculDto.OperationType);
-        //}
     }
 }

@@ -9,12 +9,14 @@ namespace ProjetOuististiApplication.Objects
         public string OperationType { get; set; }
         public float output { get; set; }
 
+        public string guid { get; set; }
+
         public CalculOutputDto(CalculAbstract ca) 
         { 
             input2 = ca.Input1; 
             input1 = ca.Input2;
             OperationType = ca.getOperationType().ToString();
-            //output = ca.GetResult();
+            guid = ca.Id.ToString();
         }
     }
 }

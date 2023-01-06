@@ -32,5 +32,18 @@ namespace ProjetOuististiDomain.Calcul
             }
             return res;
         }
+
+        public bool DeleteCalcul(Guid id)
+        {
+            try
+            {
+                _calculRepository.Delete(id);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

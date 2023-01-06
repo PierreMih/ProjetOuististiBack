@@ -24,7 +24,7 @@ namespace ProjetOuististiApplication.Controllers
             _calculRepository = calculRepository;
         }
 
-        [HttpPost("/Calculate")]
+        [HttpPost("/Calcul")]
         public CalculOutputDto ReceiveCalculAndReturnResult(CalculInputDto calcul)
         {
             CalculAbstract calc = _calculManager.ReceiveCalcul(calcul.input1, calcul.input2, calcul.OperationType);
@@ -34,6 +34,28 @@ namespace ProjetOuististiApplication.Controllers
             output.output = _calculManager.GetResultFromCalcul(calc);
 
             return output;
+        }
+
+        [HttpDelete("/Calcul")]
+        public string DeleteCalcul(string id)
+        {
+            Guid guid = new(id);
+            if (_calculManager.DeleteCalcul(guid))
+                return id + " supprimé.";
+            else
+                return "Echec de la suppression";
+        }
+
+        [HttpGet("/History")]
+        public IEnumerable<CalculOutputDto> GetAllCalculsWithResults()
+        {
+            foreach (CalculAbstract calc in _calculRepository.GetAll())
+            {
+                var output = new CalculOutputDto(calc);
+                output.output = _calculManager.GetResultFromCalcul(calc);
+                yield return output;
+            }
+            
         }
 
         [HttpGet("/Statistics")]
@@ -46,24 +68,6 @@ namespace ProjetOuististiApplication.Controllers
                 Multiplications = 250,
                 Divisions = 300
             };
-        }
-
-        [HttpGet("/AllCalculsWithResults")]
-        public IEnumerable<CalculOutputDto> GetAllCalculsWithResults()
-        {
-            //List <CalculOutputDto> list = new();
-            //foreach (CalculAbstract calc in _calculRepository.GetAll())
-            //{
-            //    list.Add(new(calc));
-            //}
-            //return list;
-            foreach (CalculAbstract calc in _calculRepository.GetAll())
-            {
-                var output = new CalculOutputDto(calc);
-                output.output = _calculManager.GetResultFromCalcul(calc);
-                yield return output;
-            }
-            
         }
     }
 }

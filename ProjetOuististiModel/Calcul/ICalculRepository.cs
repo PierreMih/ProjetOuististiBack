@@ -16,5 +16,7 @@ namespace ProjetOuististiDomain.Calcul
         public Result GetResultFromCalcul(Guid calcul);
 
         public Result Update(CalculAbstract calcul);
+
+        public void Delete(Guid calcul);
     }
 }
